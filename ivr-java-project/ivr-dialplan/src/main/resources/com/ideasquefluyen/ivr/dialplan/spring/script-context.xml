@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--  -->
+    <!-- AgiScript - Flow definitions -->
+    <!--  -->
+    <bean name="welcomeFlow" class="com.ideasquefluyen.ivr.dialplan.scripts.WelcomeScript">
+
+    </bean>
+
+    <bean name="mainMenu" class="com.ideasquefluyen.ivr.dialplan.scripts.MainMenuScript">
+
+    </bean>
+
+    <bean name="mainMenuDtmf" class="com.ideasquefluyen.ivr.dialplan.scripts.MainMenuDtmfOnlyScript">
+
+    </bean>
+
+    <!--  -->
+    <!-- Apply -->
+    <!--  -->
+
+    <bean name="mainApply" class="com.ideasquefluyen.ivr.dialplan.scripts.flow.apply.MainApplyScript">
+
+    </bean>
+
+
+    <!--  -->
+    <!-- Verify -->
+    <!--  -->
+
+    <bean name="mainVerify" class="com.ideasquefluyen.ivr.dialplan.scripts.flow.verify.MainVerifyScript">
+
+    </bean>
+
+    <!--  -->
+    <!-- Plan -->
+    <!--  -->
+
+    <bean name="mainPlan" class="com.ideasquefluyen.ivr.dialplan.scripts.flow.plan.MainPlanScript">
+
+    </bean>
+
+    <!--  -->
+    <!-- Application -->
+    <!--  -->
+
+    <bean name="mainApplication" class="com.ideasquefluyen.ivr.dialplan.scripts.flow.application.MainApplicationScript">
+
+    </bean>
+
+    <!--  -->
+    <!-- Support -->
+    <!--  -->
+
+    <bean name="mainSupport" class="com.ideasquefluyen.ivr.dialplan.scripts.flow.support.MainSupportScript">
+
+    </bean>
+
+    <!--  -->
+    <!-- Information -->
+    <!--  -->
+
+    <bean name="mainInformation" class="com.ideasquefluyen.ivr.dialplan.scripts.flow.information.MainInformationScript">
+
+    </bean>
+
+    <!--  -->
+    <!-- Refer -->
+    <!--  -->
+
+    <bean name="mainRefer" class="com.ideasquefluyen.ivr.dialplan.scripts.flow.refer.MainReferScript">
+
+    </bean>
+
+    <!--  -->
+    <!-- Letter -->
+    <!--  -->
+
+    <bean name="mainLetter" class="com.ideasquefluyen.ivr.dialplan.scripts.flow.letter.MainLetterScript">
+
+    </bean>
+
+    <!--  -->
+    <!-- Airtime -->
+    <!--  -->
+
+    <bean name="mainAirtime" class="com.ideasquefluyen.ivr.dialplan.scripts.flow.airtime.MainAirtimeScript">
+
+    </bean>
+
+    <!--  -->
+    <!-- Exceptions -->
+    <!--  -->
+
+    <bean name="hangup" class="com.ideasquefluyen.ivr.dialplan.scripts.exception.HangupScript">
+
+    </bean>
+
+</beans>

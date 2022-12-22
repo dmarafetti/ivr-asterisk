@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<configuration>
+
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+    <appender name="stash" class="net.logstash.logback.appender.LogstashSocketAppender">
+        <host>localhost</host>
+        <port>5000</port>
+    </appender>
+
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+        <appender-ref ref="stash" />
+    </root>
+
+    <logger name="org.springframework" level="OFF"/>
+    <logger name="com.ideasquefluyen.ivr.common" level="DEBUG"/>
+    <logger name="com.ideasquefluyen.ivr.dialplan" level="DEBUG"/>
+
+</configuration>

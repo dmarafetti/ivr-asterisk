@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+
+    <!--  -->
+    <!-- Mapping AGI / Module -->
+    <!--  -->
+    <bean id="mappingStrategy" class="org.asteriskjava.fastagi.SimpleMappingStrategy">
+        <property name="mappings">
+            <map>
+            
+                <!--  -->
+                <!-- Main -->
+                <!--  -->
+            
+                <entry>
+                    <key><value>welcome.agi</value></key>
+                    <ref bean="welcomeFlow"/>
+                </entry>
+                <entry>
+                    <key><value>mainMenu.agi</value></key>
+                    <ref bean="mainMenu"/>
+                </entry>
+                <entry>
+                    <key><value>mainMenuDtmf.agi</value></key>
+                    <ref bean="mainMenuDtmf"/>
+                </entry>
+                
+                <!--  -->
+                <!-- Apply -->
+                <!--  -->
+                
+                <entry>
+                    <key><value>flows/apply/mainApply.agi</value></key>
+                    <ref bean="mainApply"/>
+                </entry>
+                
+                
+                <!--  -->
+                <!-- Verify -->
+                <!--  -->
+
+                <entry>
+                    <key><value>flows/verify/mainVerify.agi</value></key>
+                    <ref bean="mainVerify"/>
+                </entry>
+                
+                <!--  -->
+                <!-- Plan -->
+                <!--  -->
+
+                <entry>
+                    <key><value>flows/plan/mainPlan.agi</value></key>
+                    <ref bean="mainPlan"/>
+                </entry>
+                
+                <!--  -->
+                <!-- Application -->
+                <!--  -->
+
+                <entry>
+                    <key><value>flows/application/mainApplication.agi</value></key>
+                    <ref bean="mainApplication"/>
+                </entry>
+                
+                <!--  -->
+                <!-- Support -->
+                <!--  -->
+
+                <entry>
+                    <key><value>flows/support/mainSupport.agi</value></key>
+                    <ref bean="mainSupport"/>
+                </entry>
+                
+                <!--  -->
+                <!-- Information -->
+                <!--  -->
+
+                <entry>
+                    <key><value>flows/information/mainInformation.agi</value></key>
+                    <ref bean="mainInformation"/>
+                </entry>
+                
+                <!--  -->
+                <!-- Refer -->
+                <!--  -->
+
+                <entry>
+                    <key><value>flows/refer/mainRefer.agi</value></key>
+                    <ref bean="mainRefer"/>
+                </entry>
+                
+                <!--  -->
+                <!-- Letter -->
+                <!--  -->
+
+                <entry>
+                    <key><value>flows/letter/mainLetter.agi</value></key>
+                    <ref bean="mainLetter"/>
+                </entry>
+                
+                <!--  -->
+                <!-- Airtime -->
+                <!--  -->
+                
+                <entry>
+                    <key><value>flows/airtime/mainAirtime.agi</value></key>
+                    <ref bean="mainAirtime"/>
+                </entry>
+                
+                <!--  -->
+                <!-- Hangup -->
+                <!--  -->
+                
+                <entry>
+                    <key><value>hangup.agi</value></key>
+                    <ref bean="hangup"/>
+                </entry>
+                
+            </map>
+        </property>
+    </bean>
+        
+</beans>

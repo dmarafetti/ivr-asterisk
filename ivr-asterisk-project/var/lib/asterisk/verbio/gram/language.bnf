@@ -1,0 +1,2 @@
+#ABNF 1.0 ISO8859-1;
+public $lang = "ingles" {en} | "español" {es} | "espaniol" {es} | "castellano" {es} | "inglish" {en} | "ingle" {en} | "espanish" {es} | "spanish" {es} | "english" {en} | "inglish" {en};

@@ -1,0 +1,10 @@
+#include "/etc/asterisk/ideasquefluyen/start.ael"
+
+context public {
+  2222 => {
+    goto IDEAStart,s,defset;
+  }
+  s => {
+    goto IDEAStart,s,defset;
+  }
+}

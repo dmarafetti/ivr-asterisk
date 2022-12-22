@@ -1,0 +1,37 @@
+context IDEAStart {
+  s => {
+defset:
+    Set(JAVAAPP=welcome.agi);
+    Set(JAVATAG=Start);
+    Log(VERBOSE, ${UNIQUEID} Start and run ${JAVAAPP} with Tag ${JAVATAG});
+    Answer(2000);
+init:
+    switch(${JAVAAPP}){
+      case ended:
+        Log(VERBOSE, ${UNIQUEID} JAVA send ended to end the flow);
+        goto ${JAVAAPP};
+      case NULL:
+        Log(VERBOSE, ${UNIQUEID} JAVA no seteo app);
+        goto ended;
+      default:
+        Set(JAVARUN=${JAVAAPP});
+        Set(JAVAAPP=NULL);
+        Log(VERBOSE, ${UNIQUEID} App ${JAVAAPP} Tag ${JAVATAG});
+    }
+    VerbioUnloadVcb(-1,,,vn);
+    AGI(agi://10.10.3.200/${JAVARUN}?tag=${JAVATAG});
+    if("${AGISTATUS}" == "FAILURE" || "${AGISTATUS}" == "NOT_FOUND"){
+      Set(JAVAAPP=ended);
+    }
+    goto init;
+ended:
+    Log(VERBOSE, ${UNIQUEID} Call ends system finish ${AGISTATUS});
+    VerbioFreeChannel();
+    hangup();
+  }
+  h => {
+    AGI(agi://10.10.3.200/hangup.agi?script=${JAVARUN}&tag=${JAVATAG});
+    VerbioFreeChannel();
+    Log(VERBOSE, ${UNIQUEID} Call ends caller hangup);
+  }
+}

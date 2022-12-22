@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--  -->
+    <!-- External Services -->
+    <!--  -->
+
+
+
+    <!--  -->
+    <!-- Verbio -->
+    <!--  -->
+    <bean id="verbioInstanceBuilder" class="com.ideasquefluyen.ivr.common.verbio.VerbioInstanceBuilder">
+
+        <property name="recordingTime"          value="7"></property>
+        <property name="defaultVerbioLanguage"  value="es-ar"></property>
+        <property name="wordThreshold"          value="10"></property>
+
+    </bean>
+
+
+    <!--  -->
+    <!-- Fastagi default server -->
+    <!--  -->
+    <bean id="agiServer" class="org.asteriskjava.fastagi.DefaultAgiServer">
+
+        <property name="maximumPoolSize" value="200"></property>
+        <property name="mappingStrategy" ref="mappingStrategy"></property>
+    </bean>
+
+
+    <!-- this bean must not be lazily initialized if the exporting is to happen -->
+    <bean id="exporter" class="org.springframework.jmx.export.MBeanExporter" lazy-init="false">
+        <property name="beans">
+            <map>
+                <entry key="bean:name=agiServer" value-ref="agiServer"/>
+            </map>
+        </property>
+    </bean>
+
+
+</beans>
